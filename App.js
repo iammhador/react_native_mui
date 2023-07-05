@@ -1,20 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { View, Text } from "react-native";
+import { Button, Provider as PaperProvider } from "react-native-paper";
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <PaperProvider>
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <Text style={{ marginBottom: 16 }}>
+          Material UI is a popular design system and component library that
+          provides a set of reusable UI components and styling options. It
+          offers a consistent and visually appealing user interface for your
+          React Native applications.
+        </Text>
+        <Text style={{ marginBottom: 16 }}>
+          Material UI follows the principles of Material Design, a design
+          language developed by Google. It focuses on using a grid-based layout,
+          responsive animations, and meaningful transitions to create a seamless
+          user experience across different platforms and devices.
+        </Text>
+        <Button mode="contained" onPress={() => console.log("Button pressed!")}>
+          Click me!
+        </Button>
+      </View>
+    </PaperProvider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
